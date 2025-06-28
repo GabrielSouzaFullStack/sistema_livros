@@ -1,0 +1,31 @@
+# Configuração de quebras de linha para o projeto
+
+# Arquivos de texto devem ter quebras de linha normalizadas
+*.java text eol=crlf
+*.md text eol=crlf
+*.txt text eol=crlf
+*.properties text eol=crlf
+*.xml text eol=crlf
+*.json text eol=crlf
+
+# Arquivos que devem ser tratados como binários
+*.jar binary
+*.class binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.7z binary
+*.rar binary
+
+# Imagens
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Arquivos de configuração de IDE
+*.form text eol=crlf
+.classpath text eol=crlf
+.project text eol=crlf

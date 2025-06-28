@@ -1,24 +1,70 @@
-# Compiled class file
+# Arquivos compilados
 *.class
+bin/
+target/
+build/
 
-# Log file
+# Arquivos de configuração com credenciais sensíveis
+config.properties
+database.properties
+conexao.properties
+*.env
+.env
+.env.local
+
+# Arquivos problemáticos de permissão
+**/.gitignore.bak
+**/.*ignore
+src/**/.*gitignore
+
+# Logs
 *.log
+logs/
 
-# BlueJ files
-*.ctxt
+# Arquivos temporários
+*.tmp
+*.temp
+*~
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.metadata/
+.recommenders/
+.settings/
+.project
+.classpath
+
+# NetBeans
+nbproject/
+build.xml
+manifest.mf
+
+# Arquivos de backup
+*.bak
+*.backup
+*.orig
+
+# Arquivos ZIP/RAR
 *.zip
-*.tar.gz
 *.rar
+*.7z
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Credenciais e chaves
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# Diretórios de dependências (se usar Maven/Gradle no futuro)
+.m2/
+.gradle/

@@ -1,0 +1,31 @@
+# Arquivo de exemplo para configurações de banco de dados
+# Copie este arquivo para 'config.properties' e configure suas credenciais
+
+# Configurações MySQL
+mysql.host=localhost
+mysql.porta=3306
+mysql.database=livros
+mysql.usuario=SEU_USUARIO_MYSQL
+mysql.senha=SUA_SENHA_MYSQL
+mysql.driver=com.mysql.cj.jdbc.Driver
+
+# Configurações PostgreSQL
+postgresql.host=localhost
+postgresql.porta=5432
+postgresql.database=livros
+postgresql.usuario=SEU_USUARIO_POSTGRESQL
+postgresql.senha=SUA_SENHA_POSTGRESQL
+postgresql.driver=org.postgresql.Driver
+
+# Configurações alternativas (produção)
+mysql.prod.host=SEU_SERVIDOR_PRODUCAO
+mysql.prod.porta=3306
+mysql.prod.database=livros_prod
+mysql.prod.usuario=USUARIO_PRODUCAO
+mysql.prod.senha=SENHA_PRODUCAO
+
+postgresql.prod.host=SEU_SERVIDOR_PRODUCAO
+postgresql.prod.porta=5432
+postgresql.prod.database=livros_prod
+postgresql.prod.usuario=USUARIO_PRODUCAO
+postgresql.prod.senha=SENHA_PRODUCAO
