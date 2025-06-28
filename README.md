@@ -161,9 +161,10 @@ notepad config.properties
 
 ✅ **Credenciais Externalizadas** - Não mais hardcoded no código  
 ✅ **Arquivo .gitignore** - Exclui `config.properties` e binários do Git  
-✅ **ConfigUtil.java** - Carregamento seguro de configurações  
-✅ **Fallback Seguro** - Valores padrão para desenvolvimento local  
-✅ **Template de Configuração** - `config.properties.example` para novos usuários
+✅ **ConfigUtil.java Seguro** - Fallback com senhas VAZIAS por segurança  
+✅ **Credenciais Padrão Removidas** - Código fonte não expõe senhas reais  
+✅ **Template de Configuração** - `config.properties.example` para novos usuários  
+✅ **Documentação Separada** - Credenciais de desenvolvimento em arquivo não versionado
 
 ## 🔧 Configuração do Banco de Dados
 

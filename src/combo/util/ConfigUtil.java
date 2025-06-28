@@ -41,20 +41,23 @@ public class ConfigUtil {
      * Carrega configurações padrão em caso de erro
      */
     private static void loadDefaultConfig() {
-        // MySQL padrão
+        System.err.println("ATENÇÃO: Usando configurações padrão para desenvolvimento local!");
+        System.err.println("Para produção, configure o arquivo config.properties");
+
+        // MySQL padrão (sem credenciais sensíveis)
         properties.setProperty("mysql.host", "localhost");
         properties.setProperty("mysql.porta", "3306");
         properties.setProperty("mysql.database", "livros");
         properties.setProperty("mysql.usuario", "root");
-        properties.setProperty("mysql.senha", "admin20251706");
+        properties.setProperty("mysql.senha", ""); // Vazio por segurança - deve ser configurado
         properties.setProperty("mysql.driver", "com.mysql.cj.jdbc.Driver");
 
-        // PostgreSQL padrão
+        // PostgreSQL padrão (sem credenciais sensíveis)
         properties.setProperty("postgresql.host", "localhost");
         properties.setProperty("postgresql.porta", "5432");
         properties.setProperty("postgresql.database", "livros");
         properties.setProperty("postgresql.usuario", "postgres");
-        properties.setProperty("postgresql.senha", "20251706");
+        properties.setProperty("postgresql.senha", ""); // Vazio por segurança - deve ser configurado
         properties.setProperty("postgresql.driver", "org.postgresql.Driver");
     }
 

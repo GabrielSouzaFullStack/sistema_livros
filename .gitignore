@@ -12,6 +12,9 @@ conexao.properties
 .env
 .env.local
 
+# Documentação com credenciais (apenas para referência local)
+DESENVOLVIMENTO.md
+
 # Arquivos problemáticos de permissão
 **/.gitignore.bak
 **/.*ignore
