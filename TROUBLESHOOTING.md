@@ -14,13 +14,11 @@ combo.bd.E_BD: Conexão com banco de dados não estabelecida!
 
 ## ✅ Soluções Implementadas
 
-### 1. **Corrigido config.properties**
+### 1. **Credenciais Externalizadas**
 
-```properties
-# Comentadas configurações de produção
-# mysql.prod.host=servidor-producao.com  <- COMENTADO
-mysql.host=localhost                      <- ATIVO
-```
+- ✅ **ConfigUtil.java**: Carrega credenciais de arquivo externo
+- ✅ **config.properties**: Configurações locais (não versionadas)
+- ✅ **Fallback Seguro**: Senhas vazias por padrão no código
 
 ### 2. **Scripts de Diagnóstico Criados**
 

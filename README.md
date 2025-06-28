@@ -59,8 +59,8 @@ sistema_livros/
 # 3. Compilar tudo
 .\compile-fixed.ps1
 
-# 4. Executar aplicação
-java -cp "bin;lib\postgresql-42.7.7.jar" combo.principal.Principal
+# 4. Executar aplicação (com seleção automática de banco)
+.\executar.ps1
 ```
 
 ### 🔧 Compilar Manualmente (Alternativa)
@@ -117,10 +117,12 @@ CREATE TABLE livros (codigo INT PRIMARY KEY AUTO_INCREMENT, titulo VARCHAR(255),
 CREATE TABLE livrostemp (codigo INT PRIMARY KEY AUTO_INCREMENT, titulo VARCHAR(255), autor VARCHAR(255), editora VARCHAR(255), ano INT);
 ```
 
-### Credenciais Padrão
+### Credenciais para Desenvolvimento Local
 
-- **MySQL**: root/admin20251706 (localhost:3306)
-- **PostgreSQL**: postgres/20251706 (localhost:5432)
+- **MySQL**: root/[configure_sua_senha] (localhost:3306)
+- **PostgreSQL**: postgres/[configure_sua_senha] (localhost:5432)
+
+> ⚠️ **IMPORTANTE**: Configure suas credenciais em `config.properties` copiando de `config.properties.example`
 
 ## 🔒 Configuração de Segurança
 
@@ -143,8 +145,10 @@ notepad config.properties
 - **`compile-fixed.ps1`** - Compilação automática com ordem de dependências correta
 - **`test-connection.ps1`** - Diagnóstico de conexão com banco de dados
 - **`setup-database.ps1`** - Comandos SQL para criar tabelas necessárias
+- **`executar.ps1`** - Execução da aplicação com seleção de banco automática
 - **`normalize-line-endings.ps1`** - Corrige problemas CRLF/LF do Git
 - **`status-projeto.ps1`** - Verificação completa do status do projeto
+- **`verificar-seguranca.ps1`** - Detecta credenciais expostas nos arquivos versionados
 
 #### 📄 Configuração e Documentação
 

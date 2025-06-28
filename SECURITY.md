@@ -19,15 +19,15 @@ copy config.properties.example config.properties
 Abra `config.properties` e configure suas credenciais reais:
 
 ```properties
-# MySQL
+# MySQL (CONFIGURE SUAS CREDENCIAIS)
 mysql.host=localhost
 mysql.usuario=root
-mysql.senha=admin20251706
+mysql.senha=SUA_SENHA_MYSQL_AQUI
 
-# PostgreSQL
-postgresql.host=localhos
+# PostgreSQL (CONFIGURE SUAS CREDENCIAIS)
+postgresql.host=localhost
 postgresql.usuario=postgres
-postgresql.senha=20251706
+postgresql.senha=SUA_SENHA_POSTGRESQL_AQUI
 ```
 
 ### 3. Verificação do .gitignore

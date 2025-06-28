@@ -33,7 +33,8 @@ public class DaoStringConexaoPostgreSQL implements DaoStringConexao {
         vo.setPorta(ConfigUtil.getProperty("postgresql.porta", "5432"));
         vo.setBaseDados(ConfigUtil.getProperty("postgresql.database", "livros"));
         vo.setUsuario(ConfigUtil.getProperty("postgresql.usuario", "postgres"));
-        vo.setSenha(ConfigUtil.getProperty("postgresql.senha", "20251706"));
+        vo.setSenha(ConfigUtil.getProperty("postgresql.senha", "")); // Vazio por segurança - configure em
+                                                                     // config.properties
         vo.setClassDriver(ConfigUtil.getProperty("postgresql.driver", "org.postgresql.Driver"));
 
         // returns
@@ -56,7 +57,7 @@ public class DaoStringConexaoPostgreSQL implements DaoStringConexao {
         vo.setUsuario(ConfigUtil.getProperty("postgresql.prod.usuario",
                 ConfigUtil.getProperty("postgresql.usuario", "postgres")));
         vo.setSenha(ConfigUtil.getProperty("postgresql.prod.senha",
-                ConfigUtil.getProperty("postgresql.senha", "20251706")));
+                ConfigUtil.getProperty("postgresql.senha", ""))); // Vazio por segurança
         vo.setClassDriver(ConfigUtil.getProperty("postgresql.driver", "org.postgresql.Driver"));
 
         // returns

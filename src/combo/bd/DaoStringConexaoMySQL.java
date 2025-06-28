@@ -29,7 +29,7 @@ public class DaoStringConexaoMySQL implements DaoStringConexao {
         vo.setPorta(ConfigUtil.getProperty("mysql.porta", "3306"));
         vo.setBaseDados(ConfigUtil.getProperty("mysql.database", "livros"));
         vo.setUsuario(ConfigUtil.getProperty("mysql.usuario", "root"));
-        vo.setSenha(ConfigUtil.getProperty("mysql.senha", "admin20251706"));
+        vo.setSenha(ConfigUtil.getProperty("mysql.senha", "")); // Vazio por segurança - configure em config.properties
         vo.setClassDriver(ConfigUtil.getProperty("mysql.driver", "com.mysql.cj.jdbc.Driver"));
 
         // retorna
@@ -48,7 +48,8 @@ public class DaoStringConexaoMySQL implements DaoStringConexao {
         vo.setBaseDados(
                 ConfigUtil.getProperty("mysql.prod.database", ConfigUtil.getProperty("mysql.database", "livros")));
         vo.setUsuario(ConfigUtil.getProperty("mysql.prod.usuario", ConfigUtil.getProperty("mysql.usuario", "root")));
-        vo.setSenha(ConfigUtil.getProperty("mysql.prod.senha", ConfigUtil.getProperty("mysql.senha", "admin20251706")));
+        vo.setSenha(ConfigUtil.getProperty("mysql.prod.senha", ConfigUtil.getProperty("mysql.senha", ""))); // Vazio por
+                                                                                                            // segurança
         vo.setClassDriver(ConfigUtil.getProperty("mysql.driver", "com.mysql.cj.jdbc.Driver"));
 
         // retorna
