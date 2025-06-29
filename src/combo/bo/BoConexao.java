@@ -18,6 +18,7 @@ public class BoConexao {
 
     /**
      * Conectar com SGBD específico
+     * 
      * @param sgbd nome do SGBD (mysql ou postgresql)
      */
     public void conectar(String sgbd) throws E_BD, ClassNotFoundException, SQLException {

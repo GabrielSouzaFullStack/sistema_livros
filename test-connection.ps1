@@ -13,7 +13,8 @@ if (Test-Path "config.properties") {
             Write-Host "  $_" -ForegroundColor White
         }
     }
-} else {
+}
+else {
     Write-Host "[ERRO] Arquivo config.properties nao encontrado!" -ForegroundColor Red
     Write-Host "Copie config.properties.example para config.properties" -ForegroundColor Yellow
 }
@@ -26,11 +27,13 @@ try {
     $mysqlTest = Test-NetConnection -ComputerName localhost -Port 3306 -WarningAction SilentlyContinue
     if ($mysqlTest.TcpTestSucceeded) {
         Write-Host "[OK] MySQL esta rodando em localhost:3306" -ForegroundColor Green
-    } else {
+    }
+    else {
         Write-Host "[ERRO] MySQL NAO esta rodando em localhost:3306" -ForegroundColor Red
         Write-Host "   Inicie o MySQL server primeiro" -ForegroundColor Yellow
     }
-} catch {
+}
+catch {
     Write-Host "[ERRO] Erro ao testar MySQL: $($_.Exception.Message)" -ForegroundColor Red
 }
 
@@ -40,11 +43,13 @@ try {
     $pgTest = Test-NetConnection -ComputerName localhost -Port 5432 -WarningAction SilentlyContinue
     if ($pgTest.TcpTestSucceeded) {
         Write-Host "[OK] PostgreSQL esta rodando em localhost:5432" -ForegroundColor Green
-    } else {
+    }
+    else {
         Write-Host "[ERRO] PostgreSQL NAO esta rodando em localhost:5432" -ForegroundColor Red
         Write-Host "   Inicie o PostgreSQL server primeiro" -ForegroundColor Yellow
     }
-} catch {
+}
+catch {
     Write-Host "[ERRO] Erro ao testar PostgreSQL: $($_.Exception.Message)" -ForegroundColor Red
 }
 

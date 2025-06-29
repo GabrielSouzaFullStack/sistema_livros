@@ -23,6 +23,7 @@ public class DaoConectarBD {
 
     /**
      * Conectar com SGBD específico
+     * 
      * @param sgbd nome do SGBD (mysql ou postgresql)
      */
     public Connection conectar(String sgbd) throws E_BD, java.lang.ClassNotFoundException, SQLException {

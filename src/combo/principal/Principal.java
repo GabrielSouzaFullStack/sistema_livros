@@ -22,6 +22,7 @@ public class Principal {
 
     /**
      * Conectar com SGBD específico
+     * 
      * @param sgbd nome do SGBD (mysql ou postgresql)
      */
     private void conectar(String sgbd) {
@@ -57,6 +58,7 @@ public class Principal {
 
     /**
      * Controle de execução com SGBD específico
+     * 
      * @param sgbd nome do SGBD (mysql ou postgresql)
      */
     public void executar(String sgbd) {
@@ -93,7 +95,7 @@ public class Principal {
             app.executar(sgbd);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, 
+            JOptionPane.showMessageDialog(null,
                     "Erro ao conectar ao banco de dados: " + e.getMessage(),
                     "Erro de Conexão", JOptionPane.ERROR_MESSAGE);
         }
