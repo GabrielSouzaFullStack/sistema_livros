@@ -91,6 +91,7 @@ public class GuiSelecionaSGBD extends JDialog {
 
             setVisible(false);
             dispose();
+            return;
         });
 
         btnCancelar.addActionListener(e -> {
