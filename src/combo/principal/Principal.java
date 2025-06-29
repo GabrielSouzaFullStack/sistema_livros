@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Sistema de Gerenciamento de Livros
+ * Versão modernizada com configuração externalizada
  */
 package combo.principal;
 
@@ -9,7 +9,6 @@ import combo.gui.GuiCombo;
 import combo.gui.GuiSelecionaSGBD;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-
 
 public class Principal {
     // atributos
@@ -22,69 +21,34 @@ public class Principal {
     }
 
     /**
-     * conectar
-     */
-    private void conectar() {
-        try {
-            // conectar
-            this.getConexao().conectar();
-
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(new javax.swing.JFrame(),
-                    "Erro ao conectar no banco de dados!"
-                            + ex.toString(),
-                    "Manipular tabelas do banco de dados!", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    /**
-     * conectar com SGBD específico
+     * Conectar com SGBD específico
+     * 
+     * @param sgbd nome do SGBD (mysql ou postgresql)
      */
     private void conectar(String sgbd) {
         try {
-            // conectar com SGBD específico
             this.getConexao().conectar(sgbd);
-            System.out.println("conectou com " + sgbd);
+            System.out.println("Conectado com " + sgbd);
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(new javax.swing.JFrame(),
-                    "Erro ao conectar no banco de dados " + sgbd + "!"
-                            + ex.toString(),
-                    "Manipular tabelas do banco de dados!", JOptionPane.ERROR_MESSAGE);
+                    "Erro ao conectar no banco de dados " + sgbd + "!\n" + ex.getMessage(),
+                    "Erro de Conexão", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     /**
-     * conectar com MySQL
-     */
-    private void conectarMySQL() {
-        try {
-            // conectar com MySQL
-            this.getConexao().conectarMySQL();
-            System.out.println("conectou com MySQL");
-
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(new javax.swing.JFrame(),
-                    "Erro ao conectar no banco de dados MySQL!"
-                            + ex.toString(),
-                    "Manipular tabelas do banco de dados!", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    /**
-     * desconectar do banco de dados
+     * Desconectar do banco de dados
      */
     private void desconectar() {
         try {
-            // desconectar
             this.getConexao().desconectar();
-            System.out.println("desconectou");
+            System.out.println("Desconectado do banco de dados");
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(new javax.swing.JFrame(),
-                    "Erro ao desconectar no banco de dados!"
-                            + ex.toString(),
-                    "Manipular tabelas do banco de dados!", JOptionPane.ERROR_MESSAGE);
+                    "Erro ao desconectar do banco de dados!\n" + ex.getMessage(),
+                    "Erro de Desconexão", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -93,56 +57,19 @@ public class Principal {
     }
 
     /**
-     * *
-     * controle de execucao
-     */
-    public void executar() {
-        // conectar
-        this.conectar();
-
-        // cria tela
-        this.gui = new GuiCombo(true, conexao);
-
-        // mostra tela
-        this.gui.setVisible(true);
-
-        // desconescta
-        this.desconectar();
-    }
-
-    /**
-     * *
-     * controle de execucao com SGBD específico
+     * Controle de execução com SGBD específico
+     * 
+     * @param sgbd nome do SGBD (mysql ou postgresql)
      */
     public void executar(String sgbd) {
         // conectar com SGBD específico
         this.conectar(sgbd);
 
-        // cria tela
+        // criar e exibir tela principal
         this.gui = new GuiCombo(true, conexao);
-
-        // mostra tela
         this.gui.setVisible(true);
 
-        // desconescta
-        this.desconectar();
-    }
-
-    /**
-     * *
-     * controle de execucao com MySQL
-     */
-    public void executarMySQL() {
-        // conectar com MySQL
-        this.conectarMySQL();
-
-        // cria tela
-        this.gui = new GuiCombo(true, conexao);
-
-        // mostra tela
-        this.gui.setVisible(true);
-
-        // desconescta
+        // desconectar quando a tela for fechada
         this.desconectar();
     }
 
@@ -168,7 +95,8 @@ public class Principal {
             app.executar(sgbd);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco de dados: " + e.getMessage(),
+            JOptionPane.showMessageDialog(null,
+                    "Erro ao conectar ao banco de dados: " + e.getMessage(),
                     "Erro de Conexão", JOptionPane.ERROR_MESSAGE);
         }
     }

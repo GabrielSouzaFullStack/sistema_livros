@@ -40,12 +40,11 @@ Thumbs.db
 *.ipr
 *.iws
 
-# Eclipse
+# Eclipse - apenas arquivos temporários
 .metadata/
 .recommenders/
-.settings/
-.project
-.classpath
+.settings/local/
+*.launch
 
 # NetBeans
 nbproject/

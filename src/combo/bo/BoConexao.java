@@ -1,15 +1,13 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Sistema de Gerenciamento de Livros
+ * Classe de negócio para conexão com banco de dados
  */
-
 package combo.bo;
 
 import combo.bd.DaoConectarBD;
 import combo.bd.DaoConsultarBD;
 import combo.bd.E_BD;
 import java.sql.SQLException;
-
 
 public class BoConexao {
     private DaoConectarBD conexao;
@@ -18,20 +16,11 @@ public class BoConexao {
     public BoConexao() {
     }
 
-    public void conectar() throws E_BD, ClassNotFoundException, SQLException {
-        // testa se existe conexao
-        if (this.getConexao() == null) {
-            // cria conexao
-            this.setConexao(new DaoConectarBD());
-
-            // cria objeto de consulta
-            this.setBd(new DaoConsultarBD(this.getConexao()));
-
-            // conectar
-            this.getConexao().conectar();
-        }
-    }
-
+    /**
+     * Conectar com SGBD específico
+     * 
+     * @param sgbd nome do SGBD (mysql ou postgresql)
+     */
     public void conectar(String sgbd) throws E_BD, ClassNotFoundException, SQLException {
         // testa se existe conexao
         if (this.getConexao() == null) {
@@ -46,22 +35,13 @@ public class BoConexao {
         }
     }
 
-    public void conectarMySQL() throws E_BD, ClassNotFoundException, SQLException {
-        // testa se existe conexao
-        if (this.getConexao() == null) {
-            // cria conexao
-            this.setConexao(new DaoConectarBD());
-
-            // cria objeto de consulta
-            this.setBd(new DaoConsultarBD(this.getConexao()));
-
-            // conectar com MySQL
-            this.getConexao().conectarMySQL();
-        }
-    }
-
+    /**
+     * Desconectar do banco de dados
+     */
     public void desconectar() throws SQLException {
-        this.getConexao().desConectar();
+        if (this.getConexao() != null) {
+            this.getConexao().desConectar();
+        }
     }
 
     public DaoConectarBD getConexao() {
