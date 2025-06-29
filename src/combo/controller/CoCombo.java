@@ -50,7 +50,7 @@ public class CoCombo {
             // mensagem
             JOptionPane.showMessageDialog(this.getGui(),
                     "Carregado " + titulos.size() + " registros!",
-                    "Registros Carregaos", JOptionPane.INFORMATION_MESSAGE);
+                    "Registros Carregados", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
             Logger.getLogger(CoCombo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (E_BD ex) {
